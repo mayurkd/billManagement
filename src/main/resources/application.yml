@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: bill-management
+    version: 1.0.0
+server:
+  port: 8085
