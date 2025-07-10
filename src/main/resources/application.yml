@@ -2,5 +2,24 @@ spring:
   application:
     name: bill-management
     version: 1.0.0
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/billmanager?useSSL=false&serverTimezone=UTC
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update       # or "create" for first-time DB creation
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
 server:
   port: 8085
+  servlet:
+    context-path: /api 
+
+jwt:
+  secret: MyVerySecretKeyForJwtGeneration1234567890!
+  expiration: 86400000   # 24 hours in milliseconds
